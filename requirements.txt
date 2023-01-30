@@ -1,0 +1,2 @@
+numcodecs
+blosc2
