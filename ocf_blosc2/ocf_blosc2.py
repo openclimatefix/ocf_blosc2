@@ -1,7 +1,7 @@
-from numcodecs.registry import register_codec
+import blosc2
 from numcodecs.abc import Codec
 from numcodecs.compat import ensure_contiguous_ndarray
-import blosc2
+from numcodecs.registry import register_codec
 
 
 class Blosc2(Codec):
@@ -14,7 +14,8 @@ class Blosc2(Codec):
         'zstd', 'blosc2'
     clevel : integer, optional
         An integer between 0 and 9 specifying the compression level.
-    See Also
+
+    See Also:
     --------
     numcodecs.zstd.Zstd, numcodecs.lz4.LZ4
     """
@@ -48,4 +49,3 @@ class Blosc2(Codec):
 
 
 register_codec(Blosc2)
-
