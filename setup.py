@@ -1,6 +1,7 @@
-""" 
+"""
 For more detailed information, please check the accompanying README.md.
 """
+
 from pathlib import Path
 
 from setuptools import find_packages, setup
