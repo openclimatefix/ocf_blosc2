@@ -1,7 +1,6 @@
 import blosc2
 from numcodecs.abc import Codec
 from numcodecs.compat import ensure_contiguous_ndarray
-from numcodecs.registry import register_codec
 
 
 class Blosc2(Codec):
@@ -46,6 +45,3 @@ class Blosc2(Codec):
             self.clevel,
         )
         return r
-
-
-register_codec(Blosc2)
