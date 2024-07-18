@@ -6,9 +6,11 @@ on:
     - cron: "0 12 * * 1"
 jobs:
   call-run-python-tests:
-    uses: openclimatefix/.github/.github/workflows/python-test.yml@main
+    uses: openclimatefix/.github/.github/workflows/python-test.yml@v1.8.1
     with:
       # 0 means don't use pytest-xdist
       pytest_numcpus: "1"
       # pytest-cov looks at this folder
       pytest_cov_dir: "ocf_blosc2"
+      os_list: '["ubuntu-latest"]'
+      python-version: "['3.10','3.11']"
