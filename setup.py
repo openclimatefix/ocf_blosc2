@@ -1,6 +1,7 @@
-""" 
+"""
 For more detailed information, please check the accompanying README.md.
 """
+
 from pathlib import Path
 
 from setuptools import find_packages, setup
@@ -20,4 +21,9 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
+    entry_points={
+        "numcodecs.codecs": [
+            "blosc2 = ocf_blosc2:Blosc2",
+        ],
+    },
 )
