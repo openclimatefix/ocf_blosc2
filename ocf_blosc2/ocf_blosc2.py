@@ -23,7 +23,7 @@ class Blosc2(Codec):
     codec_id = "blosc2"
     max_buffer_size = 2**31 - 1
 
-    def __init__(self, cname="blosc2", clevel=5): # noqa
+    def __init__(self, cname="blosc2", clevel=5):  # noqa
         self.cname = cname
         if cname == "zstd":
             self._codec = blosc2.Codec.ZSTD
@@ -32,12 +32,12 @@ class Blosc2(Codec):
         self.clevel = clevel
 
     def encode(self, buf):
-        """ Encode method """
+        """Encode method"""
         buf = ensure_contiguous_ndarray(buf, self.max_buffer_size)
         return blosc2.compress(buf, codec=self._codec, clevel=self.clevel)
 
     def decode(self, buf, out=None):
-        """ Decode method """
+        """Decode method"""
         buf = ensure_contiguous_ndarray(buf, self.max_buffer_size)
         return blosc2.decompress(buf, out)
 
