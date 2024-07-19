@@ -7,4 +7,4 @@ Install the repo and run
 ```bash
 pytest
 ```
-Unfortunately they are currently not working
+
