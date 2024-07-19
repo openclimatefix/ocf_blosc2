@@ -1,3 +1,4 @@
-numcodecs==1.26.4
+numpy==1.26.4
+numcodecs
 blosc2
 pytest
