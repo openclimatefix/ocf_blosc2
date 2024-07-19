@@ -1,2 +1,3 @@
-numcodecs
+numcodecs==1.26.4
 blosc2
+pytest
