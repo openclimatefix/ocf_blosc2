@@ -11,7 +11,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="ocf_blosc2",
-    version="0.0.8",
+    version="0.0.9",
     license="MIT",
     description="""OCF Blosc2 is a codec for numcodecs for compressing image data in Zarr/Xarray""",
     author="Jacob Bieker",
