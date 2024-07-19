@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "JackKelly",
+      "name": "Jack Kelly",
+      "avatar_url": "https://avatars.githubusercontent.com/u/460756?v=4",
+      "profile": "http://jack-kelly.com",
+      "contributions": [
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "ocf_blosc2",
+  "projectOwner": "openclimatefix"
+}
