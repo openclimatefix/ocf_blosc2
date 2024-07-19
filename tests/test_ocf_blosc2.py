@@ -1,4 +1,4 @@
-"""Unit tests for satip.jpeg_xl_float_with_nans."""
+"""Unit tests for ocf_blosc2"""
 
 import unittest
 
@@ -7,7 +7,7 @@ import numpy as np
 import ocf_blosc2
 
 
-class TestJpegXlFloatWithNaNs(unittest.TestCase):
+class TestBlosc2(unittest.TestCase):
     """Test class for unittest for the class methods and the functions.
 
     We only test our home-written functions.
@@ -20,7 +20,7 @@ class TestJpegXlFloatWithNaNs(unittest.TestCase):
         # Define synthetic input array and the expected target array:
         self.buf = np.asarray([np.nan, 0.0, 0.5, 1.0], dtype=np.float32)
         self.encoded = np.asarray(
-            [NAN_VALUE, LOWER_BOUND_FOR_REAL_PIXELS, 0.5 * (1 + LOWER_BOUND_FOR_REAL_PIXELS), 1.0],
+            [np.nan, 0.0, 0.5, 1.0],
             dtype=np.float32,
         )
 
@@ -81,31 +81,3 @@ class TestJpegXlFloatWithNaNs(unittest.TestCase):
         self.assertTrue(
             np.isclose(reshaped_buf.reshape((-1)), roundtrip_result.reshape((-1)), atol=0.1).all()
         )
-
-    def test_consistent_init_params(self):
-        """The JpegXLFloat-class has to be initialised with specific parameter combinations.
-
-        Stuff that is allowed:
-        1. If lossless = None, then everything is allowed.
-        2. If lossless = True, then level has to be None and distance has to be None or 0
-        3. If lossless = False, then everything is allowed.
-
-        To test this, we will try various parameters and see that the class gets
-        initialised properly, w/o throwing any errors.
-        """
-
-        # Sub-case 1:
-        self.assertTrue(JpegXlFloatWithNaNs(lossless=None, level="very_high", distance=-10))
-
-        # Sub-case 2:
-        with self.assertRaises(AssertionError):
-            JpegXlFloatWithNaNs(lossless=True, level=1, distance=1)
-
-        with self.assertRaises(AssertionError):
-            JpegXlFloatWithNaNs(lossless=True, level=None, distance=1)
-
-        with self.assertRaises(AssertionError):
-            JpegXlFloatWithNaNs(lossless=True, level=2, distance=0)
-
-        # Sub-case 3:
-        self.assertTrue(JpegXlFloatWithNaNs(lossless=False))
