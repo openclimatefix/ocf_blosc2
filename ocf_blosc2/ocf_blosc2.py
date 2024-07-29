@@ -1,4 +1,5 @@
 """ Main code file """
+
 import blosc2
 from numcodecs.abc import Codec
 from numcodecs.compat import ensure_contiguous_ndarray
