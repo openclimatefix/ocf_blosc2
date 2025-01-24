@@ -22,7 +22,7 @@ class Blosc2(Codec):
     """
 
     codec_id = "blosc2"
-    max_buffer_size = 2**31 - 1
+    max_buffer_size = blosc2.MAX_BUFFERSIZE
 
     def __init__(self, cname="blosc2", clevel=5):  # noqa
         self.cname = cname
