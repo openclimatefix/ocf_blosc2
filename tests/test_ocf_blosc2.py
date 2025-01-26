@@ -6,6 +6,7 @@ import ocf_blosc2
 
 
 def test_roundtrip():
+    """Test roundtrip encoding and decoding of a numpy array."""
     buf = np.asarray([np.nan, 0.0, 0.5, 1.0], dtype=np.float32)
     blosc2 = ocf_blosc2.Blosc2()
     comp_arr = blosc2.encode(buf)
