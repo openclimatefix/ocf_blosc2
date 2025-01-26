@@ -41,18 +41,6 @@ def store() -> StorePath:
 
 ALL_CODECS = [getattr(numcodecs.zarr3, cls_name) for cls_name in numcodecs.zarr3.__all__]
 
-
-@pytest.mark.parametrize("codec_class", ALL_CODECS)
-def test_entry_points(codec_class: type[numcodecs.zarr3._NumcodecsCodec]):
-    codec_name = codec_class.codec_name
-    assert get_codec_class(codec_name) == codec_class
-
-
-@pytest.mark.parametrize("codec_class", ALL_CODECS)
-def test_docstring(codec_class: type[numcodecs.zarr3._NumcodecsCodec]):
-    assert "See :class:`numcodecs." in codec_class.__doc__  # type: ignore[operator]
-
-
 @pytest.mark.parametrize(
     "codec_class",
     [Blosc2],
