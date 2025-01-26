@@ -56,9 +56,7 @@ def test_docstring(codec_class: type[numcodecs.zarr3._NumcodecsCodec]):
 
 @pytest.mark.parametrize(
     "codec_class",
-    [
-        Blosc2
-    ],
+    [Blosc2],
 )
 def test_generic_compressor(
     store: StorePath, codec_class: type[numcodecs.zarr3._NumcodecsBytesBytesCodec]
