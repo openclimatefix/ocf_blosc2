@@ -10,9 +10,8 @@ if TYPE_CHECKING:  # pragma: no cover
 else:
     zarr = pytest.importorskip("zarr")
 
-import zarr.storage
-
 import numcodecs.zarr3
+import zarr.storage
 
 from ocf_blosc2.ocf_blosc2_v3 import Blosc2
 
