@@ -1,3 +1,4 @@
+"""Test the Zarr version 3 codec with the Blosc2 codec."""
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -18,7 +19,7 @@ from ocf_blosc2.ocf_blosc2_v3 import Blosc2
 pytestmark = [
     pytest.mark.filterwarnings("ignore:Codec 'numcodecs.*' not configured in config.*:UserWarning"),
     pytest.mark.filterwarnings(
-        "ignore:Numcodecs codecs are not in the Zarr version 3 specification and may not be supported by other zarr implementations."
+        "ignore:Numcodecs codecs are not in the Zarr version 3 specification and may not be supported by other zarr implementations." # noqa
     ),
 ]
 
@@ -35,6 +36,7 @@ EXPECTED_WARNING_STR = "Numcodecs codecs are not in the Zarr version 3.*"
 
 @pytest.fixture
 def store() -> StorePath:
+    """Make a new in-memory store."""
     return StorePath(MemoryStore(read_only=False))
 
 
@@ -48,6 +50,7 @@ ALL_CODECS = [getattr(numcodecs.zarr3, cls_name) for cls_name in numcodecs.zarr3
 def test_generic_compressor(
     store: StorePath, codec_class: type[numcodecs.zarr3._NumcodecsBytesBytesCodec]
 ):
+    """Test that the generic compressor works with the Blosc2 codec."""
     data = np.arange(0, 256, dtype="uint16").reshape((16, 16))
 
     with pytest.warns(UserWarning, match=EXPECTED_WARNING_STR):
