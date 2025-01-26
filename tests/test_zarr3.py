@@ -41,6 +41,7 @@ def store() -> StorePath:
 
 ALL_CODECS = [getattr(numcodecs.zarr3, cls_name) for cls_name in numcodecs.zarr3.__all__]
 
+
 @pytest.mark.parametrize(
     "codec_class",
     [Blosc2],
