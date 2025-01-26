@@ -1,4 +1,5 @@
 """Test the Zarr version 3 codec with the Blosc2 codec."""
+
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -19,7 +20,7 @@ from ocf_blosc2.ocf_blosc2_v3 import Blosc2
 pytestmark = [
     pytest.mark.filterwarnings("ignore:Codec 'numcodecs.*' not configured in config.*:UserWarning"),
     pytest.mark.filterwarnings(
-        "ignore:Numcodecs codecs are not in the Zarr version 3 specification and may not be supported by other zarr implementations." # noqa
+        "ignore:Numcodecs codecs are not in the Zarr version 3 specification and may not be supported by other zarr implementations."  # noqa
     ),
 ]
 
