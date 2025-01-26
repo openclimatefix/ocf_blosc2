@@ -17,7 +17,6 @@ import numcodecs.zarr3
 from ocf_blosc2.ocf_blosc2_v3 import Blosc2
 
 pytestmark = [
-    pytest.mark.skipif(zarr.__version__ < "3.0.0", reason="zarr 3.0.0 or later is required"),
     pytest.mark.filterwarnings("ignore:Codec 'numcodecs.*' not configured in config.*:UserWarning"),
     pytest.mark.filterwarnings(
         "ignore:Numcodecs codecs are not in the Zarr version 3 specification and may not be supported by other zarr implementations."

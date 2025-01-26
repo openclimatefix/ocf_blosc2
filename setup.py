@@ -17,7 +17,7 @@ setup(
     author="Jacob Bieker",
     author_email="info@openclimatefix.org",
     company="Open Climate Fix Ltd",
-    install_requires=["numpy", "blosc2", "numcodecs"],
+    install_requires=["numpy", "blosc2", "numcodecs", "zarr>3"],
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
