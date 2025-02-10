@@ -1,4 +1,4 @@
-""" Main code file """
+"""Main code file"""
 
 import blosc2
 from numcodecs.abc import Codec
