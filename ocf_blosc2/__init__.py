@@ -1,3 +1,3 @@
-""" Main init file """
+"""Main init file"""
 
 from .ocf_blosc2 import Blosc2
